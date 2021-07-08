@@ -5,6 +5,7 @@
             <button [class.active] = "cargoHold.length < maxItems && item.mass + cargoMass <= maximumAllowedMass "  
             [disabled]= "cargoHold.length >= maxItems || item.mass + cargoMass > maximumAllowedMass " 
             (click)="nearCapacity = addItem(item)"> Add to Cargo Hold</button>
+            <button (click) = "removeItem(item)">Remove from the Cargo Hold</button>
             {{item.name}}, {{item.mass}} kg
         </li>
     </ol>
